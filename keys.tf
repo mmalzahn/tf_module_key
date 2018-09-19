@@ -15,12 +15,12 @@ resource "local_file" "publicKeyFile" {
   filename = "${var.key_path}/${var.key_name}.pem"
 }
 resource "local_file" "privateKeyFile_docker" {
-  count = "${var.docker_keys ? 1 : 0}"
+  count = "${var.key_dockerkeys ? 1 : 0}"
   content  = "${tls_private_key.new_key.private_key_pem}"
   filename = "${var.key_path}/docker/key.pem"
 }
 resource "local_file" "publicKeyFile_docker" {
-  count = "${var.docker_keys ? 1 : 0}"
+  count = "${var.key_dockerkeys ? 1 : 0}"
   content  = "${tls_private_key.new_key.public_key_pem}"
   filename = "${var.key_path}/docker/cert.pem"
 }
