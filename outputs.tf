@@ -7,7 +7,7 @@ output "key_algorithm" {
 output "key_path" {
   value = "${var.key_path}"
 }
-output "aws_keyname" {
+output "key_awskeyname" {
   value = "${var.key_name}"
 }
 output "privat_key_pem" {
